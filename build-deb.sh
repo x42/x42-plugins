@@ -28,3 +28,5 @@ echo
 echo
 ls -l ${TMPDIR}/x42-lv2-plugins_${DEBRELEASE}_*.changes
 ls -l ${TMPDIR}/x42-lv2-plugins_${DEBRELEASE}_*.deb
+echo
+echo "sudo dpkg -i ${TMPDIR}/x42-lv2-plugins_${DEBRELEASE}_*.deb"
