@@ -9,6 +9,10 @@ submodules:
 	git submodule init
 	git submodule update
 
+reset:
+	git submodule foreach git checkout master
+	git submodule foreach git reset --ard
+
 update:
 	git submodule foreach git pull
 	-git commit $(SUBDIRS) -m "update submodules"
@@ -19,4 +23,4 @@ submodule_check:
 		| grep -q "^-" \
 		&& $(MAKE) submodules
 
-.PHONY: submodules update
+.PHONY: submodules update reset
