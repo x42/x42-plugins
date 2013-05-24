@@ -10,3 +10,6 @@
 [submodule "nodelay.lv2"]
 	path = nodelay.lv2
 	url = git://github.com/x42/nodelay.lv2.git
+[submodule "midifilter.lv2"]
+	path = midifilter.lv2
+	url = git://github.com/x42/midifilter.lv2.git

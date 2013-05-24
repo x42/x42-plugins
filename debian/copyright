@@ -9,6 +9,11 @@ Copyright:
   2013 Robin Gareus <robin@gareus.org>
 License: GPL-2+
 
+Files: midifilter.lv2/filters/
+Copyright:
+  2013 Robin Gareus <robin@gareus.org>
+	Spencer <ssjackson71@gmail.com>
+
 Files: debian/*
 Copyright:
   2013 Robin Gareus <robin@gareus.org>
