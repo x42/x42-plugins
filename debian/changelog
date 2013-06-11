@@ -1,5 +1,0 @@
-x42-lv2-plugins (0.1.1-0.1) unstable; urgency=low
-
-  * locally created custom package for upstream testing
-
- -- Robin Gareus <robin@gareus.org>  Sat, 25 May 2013 02:23:22 +0200
