@@ -13,6 +13,7 @@ Files: midifilter.lv2/filters/
 Copyright:
   2013 Robin Gareus <robin@gareus.org>
 	Spencer <ssjackson71@gmail.com>
+License: GPL-2+
 
 Files: debian/*
 Copyright:
