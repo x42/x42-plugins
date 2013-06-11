@@ -3,12 +3,12 @@
 GITMASTER=${GITBRANCH:-master}
 GITDEBIAN=${GITBRANCH:-debian}
 
-echo -n "update submodules to latest rev? [N/y]"
+echo -n "update submodules to latest tagged rev? [N/y]"
 read -n1 a
 echo
 if test "$a" == "y" -a "$a" == "Y"; then
 	git checkout $GITMASTER
-	make update
+	make tagupdate
 fi
 
 git checkout $GITDEBIAN || git checkout -b $GITDEBIAN origin/$GITDEBIAN || exit

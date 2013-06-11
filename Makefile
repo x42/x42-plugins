@@ -13,6 +13,10 @@ reset:
 	git submodule foreach git checkout master
 	git submodule foreach git reset --ard
 
+tagupdate:
+	git submodule foreach git fetch
+	git submodule foreach 'git merge $$(git describe --abbrev=0 --tags)'
+
 update:
 	git submodule foreach git pull
 	-git commit $(SUBDIRS) -m "update submodules"
