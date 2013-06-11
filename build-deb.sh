@@ -5,12 +5,15 @@ DEBRELEASE=$(head -n1 debian/changelog | cut -d ' ' -f 2 | sed 's/[()]*//g')
 TMPDIR=/tmp/x42-${DEBRELEASE}
 rm -rf ${TMPDIR}
 
-GITBRANCH=${GITBRANCH:-master}
+GITMASTER=${GITBRANCH:-master}
+GITDEBIAN=${GITBRANCH:-debian}
+
+git checkout $GITDEBIAN || git checkout -b $GITDEBIAN origin/$GITDEBIAN || exit
 
 git-buildpackage \
 	--git-no-pristine-tar \
-	--git-upstream-branch=$GITBRANCH --git-debian-branch=$GITBRANCH \
-	--git-upstream-tree=branch \
+	--git-upstream-branch=$GITMASTER --git-debian-branch=$GITDEBIAN \
+	--git-upstream-tree=branch --git-ignore-branch \
 	--git-export-dir=${TMPDIR} --git-cleaner=/bin/true \
 	--git-force-create \
 	-rfakeroot $@
@@ -28,5 +31,3 @@ echo
 echo
 ls -l ${TMPDIR}/x42-lv2-plugins_${DEBRELEASE}_*.changes
 ls -l ${TMPDIR}/x42-lv2-plugins_${DEBRELEASE}_*.deb
-echo
-echo "sudo dpkg -i ${TMPDIR}/x42-lv2-plugins_${DEBRELEASE}_*.deb"
