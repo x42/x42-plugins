@@ -14,8 +14,12 @@ fi
 git checkout $GITDEBIAN || git checkout -b $GITDEBIAN origin/$GITDEBIAN || exit
 git merge --no-edit $GITMASTER
 
+VERSION=$(git submodule --quiet foreach git show -s --format="%ci" HEAD | cut -d' ' -f 1 | sed 's/-//g' | sort -nr | head -n 1)
+REVISIONS=$(git submodule foreach git describe --tags | tr "\n" " " | sed 's/Entering /\* /g')
+
 # interactively edit changelog
-debchange --distribution unstable
+debchange --distribution unstable --newversion "${VERSION}-0.1" "versions: ${REVISIONS}"
+debchange --edit
 git commit debian/changelog -m "finalize changelog"
 
 DEBRELEASE=$(head -n1 debian/changelog | cut -d ' ' -f 2 | sed 's/[()]*//g')
