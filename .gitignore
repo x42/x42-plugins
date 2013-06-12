@@ -1,4 +1,5 @@
 *.swp
+/*.tar.xz
 
 /debian/x42-lv2-plugins*
 /debian/files
