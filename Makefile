@@ -17,6 +17,7 @@ submodules:
 	git submodule update
 
 tagupdate:
+	git submodule foreach git checkout master
 	git submodule foreach git pull
 	git submodule foreach 'git reset --hard $$(git describe --abbrev=0 --tags)'
 	-git commit $(SUBDIRS) -m "update submodules" \
