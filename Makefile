@@ -10,7 +10,7 @@ $(SUBDIRS)::
 
 ###############################################################################
 TARNAME = x42-plugins
-TARF=$(TARNAME)_$(VERSION).tar
+TARF=$(TARNAME)-$(VERSION).tar
 
 submodules:
 	git submodule init
