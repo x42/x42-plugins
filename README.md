@@ -14,18 +14,7 @@ Debian Package
 Installation on non-debian systems
 ----------------------------------
 
-First time:
-
 ```
-make submodules
-make 
-sudo make install
-```
-
-any later time:
-
-```
-make update
 make 
 sudo make install
 ```

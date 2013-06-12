@@ -1,22 +1,20 @@
+#!/usr/bin/make
+
+VERSION ?=$(shell date +%Y%m%d)
 SUBDIRS = balance.lv2 convoLV2 nodelay.lv2 xfade.lv2 midifilter.lv2
-TARNAME=x42-plugins
-VERSION=$(shell git show -s --format="%ci" HEAD | cut -d' ' -f 1)-$(shell git describe --always)
 
-TARF=$(TARNAME)_$(VERSION).orig.tar
-
-all clean install uninstall: $(SUBDIRS)
+all clean install uninstall: submodule_check $(SUBDIRS)
 
 $(SUBDIRS)::
 	$(MAKE) -C $@ $(MAKECMDGOALS)
 
+###############################################################################
+TARNAME = x42-plugins
+TARF=$(TARNAME)_$(VERSION).orig.tar
 
 submodules:
 	git submodule init
 	git submodule update
-
-reset:
-	git submodule foreach git checkout master
-	git submodule foreach git reset -hard
 
 tagupdate:
 	git submodule foreach git fetch
