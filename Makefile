@@ -10,13 +10,13 @@ $(SUBDIRS)::
 
 ###############################################################################
 TARNAME = x42-plugins
-TARF=$(TARNAME)_$(VERSION).orig.tar
+TARF=$(TARNAME)_$(VERSION).tar
 
 submodules:
 	git submodule init
 	git submodule update
 
-tagupdate:
+tagupdate: submodule_check
 	git submodule foreach git checkout master
 	git submodule foreach git pull
 	git submodule foreach 'git reset --hard $$(git describe --abbrev=0 --tags)'
