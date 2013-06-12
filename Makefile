@@ -29,12 +29,13 @@ submodule_check:
 		&& $(MAKE) submodules
 
 dist: submodule_check tagupdate
+	$(eval VERSION := $(shell git submodule --quiet foreach git show -s --format="%ci" HEAD | cut -d' ' -f 1 | sed 's/-//g' | sort -nr | head -n 1))
 	git archive --prefix=$(TARNAME)-$(VERSION)/ --format tar HEAD > $(TARF)
-	TEMPFILE=$(shell mktemp); \
+	$(eval TEMPFILE := $(shell mktemp))
 	git submodule foreach \
-		"git archive --prefix=$(TARNAME)-$(VERSION)/"'$$(basename $$(pwd))/'" --format tar HEAD > $${TEMPFILE}; \
-		tar --concatenate -f ../$(TARF) $${TEMPFILE}"; \
-		rm $${TEMPFILE}
+		"git archive --prefix=$(TARNAME)-$(VERSION)/"'$$(basename $$(pwd))/'" --format tar HEAD > $(TEMPFILE); \
+		tar --concatenate -f ../$(TARF) $(TEMPFILE)";
+	rm $(TEMPFILE)
 	rm -f $(TARF).xz
 	xz $(TARF)
 
