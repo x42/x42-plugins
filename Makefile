@@ -1,6 +1,6 @@
 SUBDIRS = balance.lv2 convoLV2 nodelay.lv2 xfade.lv2 midifilter.lv2
 TARNAME=x42-plugins
-VERSION=$(shell git show -s --format="%ci" HEAD | cut -d' ' -f 1)
+VERSION=$(shell git show -s --format="%ci" HEAD | cut -d' ' -f 1)-$(shell git describe --always)
 
 TARF=$(TARNAME)_$(VERSION).orig.tar
 
