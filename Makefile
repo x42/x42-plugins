@@ -21,7 +21,8 @@ reset:
 tagupdate:
 	git submodule foreach git fetch
 	git submodule foreach 'git reset --hard $$(git describe --abbrev=0 --tags)'
-	-git commit $(SUBDIRS) -m "update submodules:\n\n $(shell git submodule foreach git describe --tags | tr "\n" " " | sed 's/Entering /@ -  /g' | tr "@" "\n")\n"
+	-git commit $(SUBDIRS) -m "update submodules" \
+		-m "$(shell git submodule foreach git describe --tags | tr "\n" " " | sed 's/Entering /@ -  /g' | tr "@" "\n")"
 
 submodule_check:
 	-test -d .git && \
