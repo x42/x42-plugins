@@ -9,35 +9,17 @@ $(SUBDIRS)::
 	$(MAKE) -C $@ $(MAKECMDGOALS)
 
 ###############################################################################
-TARNAME = x42-plugins
-TARF=$(TARNAME)-$(VERSION).tar
 
-submodules:
-	git submodule init
-	git submodule update
-
-tagupdate: submodule_check
-	git submodule foreach git checkout master
-	git submodule foreach git pull
-	git submodule foreach 'git reset --hard $$(git describe --abbrev=0 --tags)'
-	-git commit $(SUBDIRS) -m "update submodules" \
-		-m "$(shell git submodule foreach git describe --tags | tr "\n" " " | sed 's/Entering /@ -  /g' | tr "@" "\n")"
+dist:
+	$(MAKE) -f Makefile.git dist
 
 submodule_check:
-	-test -d .git && \
-		git submodule status \
-		| grep -q "^-" \
-		&& $(MAKE) submodules
+	-test -d .git -a .gitmodules -a -f Makefile.git && $(MAKE) -f Makefile.git submodule_check
 
-dist: submodule_check tagupdate
-	$(eval VERSION := $(shell git submodule --quiet foreach git show -s --format="%ci" HEAD | cut -d' ' -f 1 | sed 's/-//g' | sort -nr | head -n 1))
-	git archive --prefix=$(TARNAME)-$(VERSION)/ --format tar HEAD > $(TARF)
-	$(eval TEMPFILE := $(shell mktemp))
-	git submodule foreach \
-		"git archive --prefix=$(TARNAME)-$(VERSION)/"'$$(basename $$(pwd))/'" --format tar HEAD > $(TEMPFILE); \
-		tar --concatenate -f ../$(TARF) $(TEMPFILE)";
-	rm $(TEMPFILE)
-	rm -f $(TARF).xz
-	xz $(TARF)
+submodules:
+	-test -d .git -a .gitmodules -a -f Makefile.git && $(MAKE) -f Makefile.git submodules
 
-.PHONY: submodules update reset dist
+tagupdate:
+	-test -d .git -a .gitmodules -a -f Makefile.git && $(MAKE) -f Makefile.git tagupdate
+
+.PHONY: dist submodule_check submodules tagupdate
