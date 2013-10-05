@@ -13,3 +13,6 @@
 [submodule "midifilter.lv2"]
 	path = midifilter.lv2
 	url = git://github.com/x42/midifilter.lv2.git
+[submodule "meters.lv2"]
+	path = meters.lv2
+	url = git://github.com/x42/meters.lv2.git
