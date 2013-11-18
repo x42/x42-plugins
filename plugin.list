@@ -4,5 +4,6 @@ git://github.com/x42/xfade.lv2.git
 git://github.com/x42/nodelay.lv2.git
 git://github.com/x42/midifilter.lv2.git
 git://github.com/x42/meters.lv2.git
+git://github.com/x42/sisco.lv2
 
-#git://github.com/pantherb/setBfree.git
+# git://github.com/x42/robtk (toolkit used my meters.lv2 and sisco.lv2)
