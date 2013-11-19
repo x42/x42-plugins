@@ -16,5 +16,5 @@ Installation on non-debian systems
 
 ```
 make 
-sudo make install
+sudo make install PREFIX=/usr
 ```

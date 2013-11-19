@@ -1,8 +1,13 @@
+2013-11-19 (0.2.0)  Robin Gareus <robin@gareus.org>
+* include list of plugins & version with dist
+* augment and submodules (see plugin.list)
+* share robTK between meters.lv2 and sisco.lv2
+
 2013-05-25 (0.1.1)  Robin Gareus <robin@gareus.org>
 * update submodules
 
 2013-05-25 (0.1.0)  Robin Gareus <robin@gareus.org>
-* add midifilter.lv plugis
+* add midifilter.lv2 plugins
 
 2013-05-20 (0.0.1)  Robin Gareus <robin@gareus.org>
 * plugin collection
