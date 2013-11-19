@@ -2,5 +2,4 @@
 .gitattributes export-ignore
 .gitmodules export-ignore
 build-deb.sh export-ignore
-plugin.list export-ignore
 Makefile.git export-ignore

@@ -27,6 +27,12 @@ dist: submodule_check tagupdate
 	git submodule foreach \
 		"git archive --prefix=$(TARNAME)-$(VERSION)/"'$$(basename $$(pwd))/'" --format tar HEAD > $(TEMPFILE); \
 		tar --concatenate -f ../$(TARF) $(TEMPFILE)";
+	mkdir $(TARNAME)-$(VERSION)
+	git submodule --quiet foreach 'echo -n "$$name "; git describe --tags' > $(TARNAME)-$(VERSION)/plugin.versions
+	tar cf $(TEMPFILE) $(TARNAME)-$(VERSION)/plugin.versions
+	rm -f $(TARNAME)-$(VERSION)/plugin.versions
+	rmdir $(TARNAME)-$(VERSION)
+	tar --concatenate -f $(TARF) $(TEMPFILE)
 	rm $(TEMPFILE)
 	rm -f $(TARF).xz
 	xz $(TARF)
