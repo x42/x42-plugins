@@ -6,9 +6,10 @@ GITDEBIAN=${GITBRANCH:-debian}
 echo -n "update submodules to latest tagged rev? [N/y]"
 read -n1 a
 echo
-if test "$a" == "y" -a "$a" == "Y"; then
+if test "$a" == "y" -o "$a" == "Y"; then
 	git checkout $GITMASTER
 	make tagupdate
+	git commit -a -m "update submodules"
 fi
 
 git checkout $GITDEBIAN || git checkout -b $GITDEBIAN origin/$GITDEBIAN || exit
