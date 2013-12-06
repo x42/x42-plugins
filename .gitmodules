@@ -22,3 +22,6 @@
 [submodule "sisco.lv2"]
 	path = sisco.lv2
 	url = git://github.com/x42/sisco.lv2
+[submodule "tuna.lv2"]
+	path = tuna.lv2
+	url = git://github.com/x42/tuna.lv2
