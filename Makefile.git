@@ -18,7 +18,7 @@ submodule_check:
 	-test -d .git -a .gitmodules && \
 		git submodule status \
 		| grep -q "^-" \
-		&& $(MAKE) submodules
+		&& $(MAKE) submodules || true
 
 dist: submodule_check tagupdate
 	$(eval VERSION := $(shell git submodule --quiet foreach git show -s --format="%ci" HEAD | cut -d' ' -f 1 | sed 's/-//g' | sort -nr | head -n 1))
@@ -29,8 +29,9 @@ dist: submodule_check tagupdate
 		tar --concatenate -f ../$(TARF) $(TEMPFILE)";
 	mkdir $(TARNAME)-$(VERSION)
 	git submodule --quiet foreach 'echo -n "$$name "; git describe --tags' > $(TARNAME)-$(VERSION)/plugin.versions
-	tar cf $(TEMPFILE) $(TARNAME)-$(VERSION)/plugin.versions
-	rm -f $(TARNAME)-$(VERSION)/plugin.versions
+	git submodule --quiet foreach 'echo -n "export "; echo -n "$${name}" | sed "s/\.lv2\$$//"; echo -n "_VERSION="; git describe --tags | sed "s/-g.*\$$//;s/^v//"' > $(TARNAME)-$(VERSION)/gitversion.mak
+	tar cf $(TEMPFILE) $(TARNAME)-$(VERSION)/plugin.versions $(TARNAME)-$(VERSION)/gitversion.mak
+	rm -f $(TARNAME)-$(VERSION)/plugin.versions $(TARNAME)-$(VERSION)/gitversion.mak
 	rmdir $(TARNAME)-$(VERSION)
 	tar --concatenate -f $(TARF) $(TEMPFILE)
 	rm $(TEMPFILE)
