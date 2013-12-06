@@ -1,3 +1,7 @@
+2013-12-06 (0.2.0)  Robin Gareus <robin@gareus.org>
+* add tuna.lv2
+* include gitversion.mak in dist-tarball
+
 2013-11-19 (0.2.0)  Robin Gareus <robin@gareus.org>
 * include list of plugins & version with dist
 * augment and submodules (see plugin.list)
