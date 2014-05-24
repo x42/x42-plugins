@@ -25,3 +25,9 @@
 [submodule "tuna.lv2"]
 	path = tuna.lv2
 	url = git://github.com/x42/tuna.lv2
+[submodule "onsettrigger.lv2"]
+	path = onsettrigger.lv2
+	url = git://github.com/x42/onsettrigger.lv2
+[submodule "mixtri.lv2"]
+	path = mixtri.lv2
+	url = git://github.com/x42/mixtri.lv2
