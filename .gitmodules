@@ -31,3 +31,6 @@
 [submodule "mixtri.lv2"]
 	path = mixtri.lv2
 	url = git://github.com/x42/mixtri.lv2
+[submodule "fil4.lv2"]
+	path = fil4.lv2
+	url = git://github.com/x42/fil4.lv2

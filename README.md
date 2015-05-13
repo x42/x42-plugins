@@ -39,3 +39,4 @@ Screenshots
 ![screenshot](https://raw.github.com/x42/sisco.lv2/master/img/sisco4.png "Four Channel Variant")
 ![screenshot](https://raw.github.com/x42/balance.lv2/master/doc/screenshot_ui.png "Built-in openGL GUI")
 ![screenshot](https://raw.github.com/x42/xfade.lv2/master/screenshot_ardour.png "Ardour3 and xfade.lv2")
+![screenshot](https://raw.github.com/x42/fil4.lv2/master/img/fil4_v2.png "Parametric EQ")
