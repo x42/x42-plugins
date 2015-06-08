@@ -2,7 +2,7 @@ x42-plugins
 ===========
 
 Collection of LV2 plugins - git externals - ready for packaging.
-see plugin.list for and index of included plugins.
+see plugin.list for an index of included plugins.
 
 Releases
 --------
@@ -18,7 +18,7 @@ for automatic watching using uscan).
 Install
 -------
 
-This repository is intended for distribution packagers, not end-user.
+This repository is intended for distribution packagers, not end-users.
 It has been adoped by a wide variety of GNU/Linux distributions already.
 Please check your distribution.
 
