@@ -34,3 +34,15 @@
 [submodule "fil4.lv2"]
 	path = fil4.lv2
 	url = git://github.com/x42/fil4.lv2
+[submodule "testsignal.lv2"]
+	path = testsignal.lv2
+	url = git://github.com/x42/testsignal.lv2
+[submodule "stereoroute.lv2"]
+	path = stereoroute.lv2
+	url = git://github.com/x42/stereoroute.lv2.git
+[submodule "controlfilter.lv2"]
+	path = controlfilter.lv2
+	url = git://github.com/x42/controlfilter.lv2.git
+[submodule "midimap.lv2"]
+	path = midimap.lv2
+	url = git://github.com/x42/midimap.lv2
