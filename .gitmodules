@@ -46,3 +46,6 @@
 [submodule "midimap.lv2"]
 	path = midimap.lv2
 	url = git://github.com/x42/midimap.lv2
+[submodule "midigen.lv2"]
+	path = midigen.lv2
+	url = git://github.com/x42/midigen.lv2
