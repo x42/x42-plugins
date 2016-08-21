@@ -49,3 +49,9 @@
 [submodule "midigen.lv2"]
 	path = midigen.lv2
 	url = git://github.com/x42/midigen.lv2
+[submodule "stepseq.lv2"]
+	path = stepseq.lv2
+	url = git://github.com/x42/stepseq.lv2.git
+[submodule "fat1.lv2"]
+	path = fat1.lv2
+	url = git://github.com/x42/fat1.lv2.git
