@@ -55,3 +55,6 @@
 [submodule "fat1.lv2"]
 	path = fat1.lv2
 	url = git://github.com/x42/fat1.lv2.git
+[submodule "dpl.lv2"]
+	path = dpl.lv2
+	url = git://github.com/x42/dpl.lv2

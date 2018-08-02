@@ -9,6 +9,7 @@ VERSION ?=$(shell date +%Y%m%d)
 SUBDIRS = \
           balance.lv2 \
           controlfilter.lv2 \
+          dpl.lv2 \
           convoLV2 \
           fat1.lv2 \
           fil4.lv2 \
