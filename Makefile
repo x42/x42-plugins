@@ -21,6 +21,7 @@ SUBDIRS = \
           nodelay.lv2 \
           onsettrigger.lv2 \
           sisco.lv2 \
+          spectra.lv2 \
           stepseq.lv2 \
           stereoroute.lv2 \
           testsignal.lv2 \

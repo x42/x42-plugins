@@ -58,3 +58,6 @@
 [submodule "dpl.lv2"]
 	path = dpl.lv2
 	url = git://github.com/x42/dpl.lv2
+[submodule "spectra.lv2"]
+	path = spectra.lv2
+	url = git://github.com/x42/spectra.lv2.git
