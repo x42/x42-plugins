@@ -13,6 +13,7 @@ SUBDIRS = \
           convoLV2 \
           fat1.lv2 \
           fil4.lv2 \
+          matrixmixer.lv2 \
           meters.lv2 \
           midifilter.lv2 \
           midigen.lv2 \

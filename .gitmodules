@@ -61,3 +61,6 @@
 [submodule "spectra.lv2"]
 	path = spectra.lv2
 	url = git://github.com/x42/spectra.lv2.git
+[submodule "matrixmixer.lv2"]
+	path = matrixmixer.lv2
+	url = git://github.com/x42/matrixmixer.lv2.git
