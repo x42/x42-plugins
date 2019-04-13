@@ -4,4 +4,3 @@
 build-deb.sh export-ignore
 Makefile.git export-ignore
 README.md export-ignore
-modgui export-ignore
