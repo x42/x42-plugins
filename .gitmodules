@@ -64,3 +64,6 @@
 [submodule "matrixmixer.lv2"]
 	path = matrixmixer.lv2
 	url = git://github.com/x42/matrixmixer.lv2.git
+[submodule "darc.lv2"]
+	path = darc.lv2
+	url = git://github.com/x42/darc.lv2.git
