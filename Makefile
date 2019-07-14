@@ -16,6 +16,7 @@ SUBDIRS = \
           fil4.lv2 \
           matrixmixer.lv2 \
           meters.lv2 \
+          mididebug.lv2 \
           midifilter.lv2 \
           midigen.lv2 \
           midimap.lv2 \

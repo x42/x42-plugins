@@ -67,3 +67,6 @@
 [submodule "darc.lv2"]
 	path = darc.lv2
 	url = git://github.com/x42/darc.lv2.git
+[submodule "mididebug.lv2"]
+	path = mididebug.lv2
+	url = git://github.com/x42/mididebug.lv2.git
