@@ -12,9 +12,9 @@ tagupdate: submodule_check
 	git submodule foreach git pull
 	git submodule foreach 'git reset --hard $$(git describe --abbrev=0 --tags)'
 	$(eval TEMPFILE := $(shell mktemp))
-	echo "update submodules\n" > $(TEMPFILE)
+	echo -e "update submodules\n" > $(TEMPFILE)
 	git submodule --quiet foreach 'printf " - %-18s " $$name; git describe --tags' >> $(TEMPFILE)
-	git commit -a -F $(TEMPFILE)
+	-git commit -a -F $(TEMPFILE)
 	rm $(TEMPFILE)
 
 submodule_check:
@@ -32,7 +32,7 @@ dist: submodule_check tagupdate
 		tar --concatenate -f ../$(TARF) $(TEMPFILE)";
 	mkdir $(TARNAME)-$(VERSION)
 	echo "Changes since last release tag:" >  $(TARNAME)-$(VERSION)/plugin.news
-	git submodule --quiet foreach 'echo ; echo "\n---- $$name ----"; git log --pretty=format:"* %s" $$(git tag --list --sort=version:refname | tail -n2 | sed -z "s/\n/../");' >> $(TARNAME)-$(VERSION)/plugin.news
+	git submodule --quiet foreach 'echo ; echo -e "\n---- $$name ----"; git log --pretty=format:"* %s" $$(git tag -l| sort -V | tail -n2 | sed ":a;N;\$$ !ba;s/\n/../");' >> $(TARNAME)-$(VERSION)/plugin.news
 	git submodule --quiet foreach 'echo -n "$$name "; git describe --tags' > $(TARNAME)-$(VERSION)/plugin.versions
 	git submodule --quiet foreach 'echo -n "export "; echo -n "$${name}" | sed "s/\.lv2\$$//"; echo -n "_VERSION="; git describe --tags | sed "s/-g.*\$$//;s/^v//"' > $(TARNAME)-$(VERSION)/gitversion.mak
 	tar cf $(TEMPFILE) $(TARNAME)-$(VERSION)/plugin.news $(TARNAME)-$(VERSION)/plugin.versions $(TARNAME)-$(VERSION)/gitversion.mak
