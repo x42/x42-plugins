@@ -70,3 +70,6 @@
 [submodule "mididebug.lv2"]
 	path = mididebug.lv2
 	url = git://github.com/x42/mididebug.lv2.git
+[submodule "zconvo.lv2"]
+	path = zconvo.lv2
+	url = git://github.com/x42/zconvo.lv2.git

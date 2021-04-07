@@ -29,7 +29,8 @@ SUBDIRS = \
           stereoroute.lv2 \
           testsignal.lv2 \
           tuna.lv2 \
-          xfade.lv2
+          xfade.lv2 \
+          zconvo.lv2
 
 
 all clean install uninstall: submodule_check $(SUBDIRS)
