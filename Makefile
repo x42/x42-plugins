@@ -23,6 +23,7 @@ SUBDIRS = \
           mixtri.lv2 \
           nodelay.lv2 \
           onsettrigger.lv2 \
+          phaserotate.lv2 \
           sisco.lv2 \
           spectra.lv2 \
           stepseq.lv2 \

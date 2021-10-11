@@ -73,3 +73,6 @@
 [submodule "zconvo.lv2"]
 	path = zconvo.lv2
 	url = git://github.com/x42/zconvo.lv2.git
+[submodule "phaserotate.lv2"]
+	path = phaserotate.lv2
+	url = git://github.com/x42/phaserotate.lv2.git
