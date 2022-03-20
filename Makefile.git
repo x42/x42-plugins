@@ -22,6 +22,7 @@ submodule_check:
 		git submodule status \
 		| grep -q "^-" \
 		&& $(MAKE) submodules || true
+	-test -d .git -a .gitmodules && git submodule sync || true
 
 dist: submodule_check tagupdate
 	$(eval VERSION := $(shell git submodule --quiet foreach git show -s --format="%ci" HEAD | cut -d' ' -f 1 | sed 's/-//g' | sort -nr | head -n 1))
