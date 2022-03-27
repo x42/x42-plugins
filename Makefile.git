@@ -33,7 +33,7 @@ dist: submodule_check tagupdate
 		tar --concatenate -f ../$(TARF) $(TEMPFILE)";
 	mkdir $(TARNAME)-$(VERSION)
 	echo "Changes since last release tag:" >  $(TARNAME)-$(VERSION)/plugin.news
-	git submodule --quiet foreach 'echo ; /bin/echo -e "\n---- $$name ----"; git log --pretty=format:"* %as %s" $$(git tag -l| sort -V | tail -n2 | sed ":a;N;\$$ !ba;s/\n/../");' >> $(TARNAME)-$(VERSION)/plugin.news
+	git submodule --quiet foreach 'echo ; /bin/echo -e "\n---- $$name ----"; git log --date=short --pretty=format:"* %cd %s" $$(git tag -l| sort -V | tail -n2 | sed ":a;N;\$$ !ba;s/\n/../");' >> $(TARNAME)-$(VERSION)/plugin.news
 	git submodule --quiet foreach 'echo -n "$$name "; git describe --tags' > $(TARNAME)-$(VERSION)/plugin.versions
 	git submodule --quiet foreach 'echo -n "export "; echo -n "$${name}" | sed "s/\.lv2\$$//"; echo -n "_VERSION="; git describe --tags | sed "s/-g.*\$$//;s/^v//"' > $(TARNAME)-$(VERSION)/gitversion.mak
 	tar cf $(TEMPFILE) $(TARNAME)-$(VERSION)/plugin.news $(TARNAME)-$(VERSION)/plugin.versions $(TARNAME)-$(VERSION)/gitversion.mak
