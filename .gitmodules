@@ -1,9 +1,6 @@
 [submodule "balance.lv2"]
 	path = balance.lv2
 	url = https://github.com/x42/balance.lv2.git
-[submodule "convoLV2"]
-	path = convoLV2
-	url = https://github.com/x42/convoLV2.git
 [submodule "xfade.lv2"]
 	path = xfade.lv2
 	url = https://github.com/x42/xfade.lv2.git

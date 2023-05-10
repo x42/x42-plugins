@@ -11,7 +11,6 @@ SUBDIRS = \
           controlfilter.lv2 \
           darc.lv2 \
           dpl.lv2 \
-          convoLV2 \
           fat1.lv2 \
           fil4.lv2 \
           matrixmixer.lv2 \
