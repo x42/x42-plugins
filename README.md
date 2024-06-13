@@ -1,7 +1,7 @@
 x42-plugins
 ===========
 
-Collection of LV2 plugins - git externals - ready for packaging.
+Collection of LV2 plugins - git externals - intended for packaging.
 see plugin.list for an index of included plugins.
 
 Releases
@@ -10,6 +10,10 @@ Releases
 The repository consists of various git-submodules, a release tar.xz
 can be created by running `make dist` in a git clone of this repository.
 This will update all submodules to their latest *tagged* version.
+
+NOTE: This meta-repo tself is **not** automatically updated to the latest
+release of each submodule. You will have to run `make dist` or
+`make tagupdate`.
 
 For convenience the latest version of this plugin bundle is automatically
 generated at http://gareus.org/misc/x42-plugins.php (the URL is suitable
