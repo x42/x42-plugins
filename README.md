@@ -11,7 +11,7 @@ The repository consists of various git-submodules, a release tar.xz
 can be created by running `make dist` in a git clone of this repository.
 This will update all submodules to their latest *tagged* version.
 
-NOTE: This meta-repo tself is **not** automatically updated to the latest
+NOTE: This meta-repo itself is **not** automatically updated to the latest
 release of each submodule. You will have to run `make dist` or
 `make tagupdate`.
 
